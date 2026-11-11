@@ -19,7 +19,6 @@ from dataclasses import dataclass, field
 from typing import Callable, Optional, Any, Dict, List
 
 import websockets
-from websockets import Request
 
 import config
 
@@ -91,13 +90,10 @@ class HAWebSocketClient:
             logger.info("Connexion WebSocket à %s...", self.config.url)
             
             # Connexion avec timeout
-            request = Request(
-                self.config.url,
-                headers={"Authorization": f"Bearer {self.config.token}"}
-            )
             self.websocket = await asyncio.wait_for(
                 websockets.connect(
-                    request,
+                    self.config.url,
+                    extra_headers={"Authorization": f"Bearer {self.config.token}"},
                     ping_interval=20,
                     ping_timeout=60
                 ),
