@@ -110,7 +110,7 @@ class HAWebSocketClient:
             logger.info("✅ Connexion WebSocket établie")
             
             # Authentification (nécessaire pour HA)
-            await self._authenticate()
+#            await self._authenticate()  # Disabled for Supervisor WS
             
             # S'abonner aux événements
             await self._subscribe_to_events()
