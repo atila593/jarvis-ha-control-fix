@@ -1,0 +1,43 @@
+{
+  "version": "4.0.4",
+  "build_date": "2026-11-11T19:30:00Z",
+  "git_commit": null,
+  "git_branch": "main",
+  "is_dev": false,
+  "changelog": [
+    "FIX: Migration vers le package google-genai (google-generativeai est obsolète)",
+    "FIX: Correction de l'import Generic dans connection_pool.py et batch_processor.py",
+    "FIX: Correction de l'import WebSocket (extra_headers → headers)",
+    "FIX: Ajout des dépendances manquantes (aiohttp, httpx, websockets)",
+    "NOUVEAU: Dashboard futuriste sans scroll avec design IA autonome",
+    "NOUVEAU: Sélecteur d'entités dropdown avec recherche et catégories",
+    "NOUVEAU: Zone d'activité en temps réel (actions en cours, dernières actions, décisions autonomes)",
+    "NOUVEAU: Configuration de l'addon avec menus déroulants pour les entités",
+    "NOUVEAU: Boutons tactiles adaptés aux écrans tactiles",
+    "NOUVEAU: Endpoint /api/entities pour récupérer toutes les entités HA",
+    "NOUVEAU: Endpoint /api/realtime-activity pour l'activité en temps réel",
+    "AMÉLIORATION: Design responsive pour mobile, tablette et desktop",
+    "AMÉLIORATION: Animations futuristes (orb, badge LIVE, effets lumineux)",
+    "AMÉLIORATION: Catégorisation automatique des entités par type",
+    "AMÉLIORATION: Boutons d'action rapide pour les commandes courantes",
+    "FIX: Correction des erreurs d'affichage et de mise à jour"
+  ],
+  "features": [
+    "Dashboard futuriste sans scroll",
+    "Sélecteur d'entités intelligent avec dropdown",
+    "Zone d'activité en temps réel",
+    "Configuration avec menus déroulants",
+    "Design responsive et tactile-friendly",
+    "Animations IA autonome",
+    "Agents IA complets",
+    "Monitoring et Sécurité",
+    "Optimisation des performances",
+    "Traitement par lots",
+    "Mise en cache intelligente",
+    "Pool de connexions",
+    "Surveillance temps réel",
+    "Optimisation automatique",
+    "Notifications de mise à jour",
+    "Système de versionnement automatique"
+  ]
+}

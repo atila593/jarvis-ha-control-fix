@@ -1,0 +1,141 @@
+name: Jarvis HA Control
+version: "4.0.4"
+slug: jarvis_ha_control
+description: "Assistant Gemini, HUD web futuriste et diagnostic systeme pour Home Assistant. Version 4.0.0 : Dashboard IA autonome sans scroll + Sélecteur d'entités dropdown + Zone d'activité temps réel + Configuration avec menus déroulants + Design tactile-friendly."
+url: https://github.com/atila593/jarvis-ha-control
+arch:
+  - amd64
+  - aarch64
+  - armhf
+  - armv7
+  - i386
+startup: application
+boot: auto
+init: false
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:robot-outline
+panel_title: Jarvis
+homeassistant_api: true
+hassio_api: true
+options:
+  gemini_api_key: ""
+  gemini_model: gemini-3.6-flash
+  gemini_fallback_model: gemini-3.5-flash
+  log_level: info
+  speak_service: ""
+  speak_targets: []
+  auto_speak: false
+  actions_enabled: true
+  allowed_domains:
+    - light
+    - cover
+    - vacuum
+    - scene
+    - sensor
+    - switch
+    - camera
+    - binary_sensor
+    - automation
+  action_entities: []
+  auto_discover: true
+  extra_entities: []
+  hidden_entities: []
+  presence_prefix: ""
+  presence_zone_names: []
+  autonomy_enabled: true
+  autonomy_interval: 30
+  autonomy_rules: []
+  auto_rules: []
+  approvers: []
+  quiet_start: "22:00"
+  quiet_end: "07:00"
+  notify_service: ""
+  proposal_ttl_minutes: 120
+  daily_report_time: ""
+  unavailable_minutes: 30
+  engineer_enabled: false
+  engineer_edit_existing: false
+  stale_days: 7
+  vision_enabled: false
+  frigate_url: ""
+  vision_labels:
+    - person
+  vision_cameras: []
+  vision_api_key: ""
+  vision_model: ""
+  vision_daily_budget: 60
+  vision_cooldown_minutes: 5
+  memory_enabled: false
+  voice_enabled: false
+  voice_pin: ""
+  user_roles: []
+  speak_tts_platform: "tts.piper"
+  speak_language: "fr_FR"
+  speak_voice: "fr_FR-tom-medium"
+  # Nouveaux paramètres pour la version 4.0.0
+  auto_update: true
+  notify_updates: true
+  confidence_threshold: 70
+  max_actions_per_hour: 50
+schema:
+  gemini_api_key: password
+  gemini_model: str
+  gemini_fallback_model: str?
+  log_level: list(debug|info|warning|error)
+  speak_service: str?
+  speak_targets:
+    - str
+  auto_speak: bool
+  actions_enabled: bool
+  allowed_domains:
+    - str
+  action_entities:
+    - str
+  auto_discover: bool
+  extra_entities:
+    - str
+  hidden_entities:
+    - str
+  presence_prefix: str?
+  presence_zone_names:
+    - str
+  autonomy_enabled: bool
+  autonomy_interval: int(10,600)
+  autonomy_rules:
+    - str
+  auto_rules:
+    - str
+  approvers:
+    - str
+  quiet_start: str
+  quiet_end: str
+  notify_service: str?
+  proposal_ttl_minutes: int(5,1440)
+  daily_report_time: str?
+  unavailable_minutes: int(5,1440)
+  engineer_enabled: bool
+  engineer_edit_existing: bool
+  stale_days: int(1,365)
+  vision_enabled: bool
+  frigate_url: str?
+  vision_labels:
+    - str
+  vision_cameras:
+    - str
+  vision_api_key: password?
+  vision_model: str?
+  vision_daily_budget: int(1,1000)
+  vision_cooldown_minutes: int(0,120)
+  memory_enabled: bool
+  voice_enabled: bool
+  voice_pin: password?
+  user_roles:
+    - str
+  speak_tts_platform: str?
+  speak_language: str?
+  speak_voice: str?
+  auto_update: bool
+  notify_updates: bool
+  confidence_threshold: int(0,100)
+  max_actions_per_hour: int(0,200)
