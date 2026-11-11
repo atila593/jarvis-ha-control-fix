@@ -90,10 +90,13 @@ class HAWebSocketClient:
             logger.info("Connexion WebSocket à %s...", self.config.url)
             
             # Connexion avec timeout
+            # Ajouter le token dans l'URL pour compatibilite HAOS
+            import urllib.parse
+            url_with_token = f"{self.config.url}?token={self.config.token}"
+            
             self.websocket = await asyncio.wait_for(
                 websockets.connect(
-                    self.config.url,
-                    extra_headers={"Authorization": f"Bearer {self.config.token}"},
+                    url_with_token,
                     ping_interval=20,
                     ping_timeout=60
                 ),
