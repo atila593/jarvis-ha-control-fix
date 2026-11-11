@@ -93,7 +93,7 @@ class HAWebSocketClient:
             self.websocket = await asyncio.wait_for(
                 websockets.connect(
                     self.config.url,
-                    headers={"Authorization": f"Bearer {self.config.token}"},  # ✅ CORRIGÉ
+                    extra_headers={"Authorization": f"Bearer {self.config.token}"},  # ✅ CORRIGÉ
                     ping_interval=20,
                     ping_timeout=60
                 ),
