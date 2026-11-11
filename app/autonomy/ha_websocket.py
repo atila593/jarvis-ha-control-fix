@@ -93,7 +93,7 @@ class HAWebSocketClient:
             # Connexion avec timeout
             request = Request(
                 self.config.url,
-                extra_headers={"Authorization": f"Bearer {self.config.token}"}
+                headers={"Authorization": f"Bearer {self.config.token}"}
             )
             self.websocket = await asyncio.wait_for(
                 websockets.connect(
